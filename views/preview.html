@@ -1,0 +1,27 @@
+{% extends 'base_registration.html' %}
+
+{% block top_content %}
+    <div class="gcb-cols">
+      <div class="gcb-col-11 gcb-aside">
+
+        {% include 'summary.html' %}
+
+        <div class="gcb-col-55" >
+          <center>
+
+          </center>
+        </div>
+      </div>
+    </div>
+    {{course_info.preview.after_top_content_ends}}
+{% endblock %}
+
+{% block main_content %}
+    <div style="margin-top: 20px;" class="gcb-cols">
+      <div class="gcb-col-1">
+      </div>
+	  
+      
+    </div>
+    {{course_info.preview.after_main_content_ends}}
+{% endblock %}

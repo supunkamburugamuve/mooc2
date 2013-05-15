@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+
+{% block subtitle %}
+  {% trans %} Assessment {% endtrans %}
+{% endblock subtitle %}
+
+{% block top_content %}
+{% endblock %}
+
+{% block main_content %}
+
+<style>
+  h1 { padding: .2em; margin: 0; }
+  #playlist { float:left; width: 500px; margin-right: 2em; }
+  #droppedItems { width: 200px; float: left; margin-top: 1em; }
+  /* style the list to maximize the droppable hitarea */
+  #droppedItems ol { margin: 0; padding: 1em 0 1em 3em; }
+</style>
+<script>
+  $(function() {
+  $( "#playlistItems" ).accordion();
+  $( "#playlistItems li" ).draggable({
+  appendTo: "body",
+  helper: "clone"
+  });
+  $( "#droppedItems ol" ).droppable({
+  activeClass: "ui-state-default",
+  hoverClass: "ui-state-hover",
+  accept: ":not(.ui-sortable-helper)",
+  drop: function( event, ui ) {
+  $( this ).find( ".placeholder" ).remove();
+  $( "<li></li>" ).html( ui.draggable.html() ).appendTo( this );
+  }
+  }).sortable({
+  items: "li:not(.placeholder)",
+  sort: function() {
+  // gets added unintentionally by droppable interacting with sortable
+  // using connectWithSortable fixes this, but doesn't allow you to customize active/hoverClass options
+  $( this ).removeClass( "ui-state-default" );
+  }
+  });
+  });
+</script> 
+
+<style>
+  
+  li { list-style-type:none;}
+  #playlist li {font-size: 16px;}
+  h1 { padding: .2em; margin: 0; }
+  #playlist { float:left; width: 300px; margin-left: 6em; margin-right: 2em; margin-top: 5em; }
+  #droppedItems { width: 380px; height: 400px; float: left; margin-top: 5em; }
+  /* style the list to maximize the droppable hitarea */
+  #droppedItems ol { margin: 0; padding: 1em 0 1em 3em; }
+  
+  
+  #screenshot{
+	position:absolute;
+	border:1px solid #ccc;
+	background:#333;
+	padding:5px;
+	display:none;
+	color:#fff;
+	}
+</style>
+
+<script>
+
+ 
+/*
+ * Url preview script 
+ * powered by jQuery (http://www.jquery.com)
+ * 
+ * written by Alen Grakalic (http://cssglobe.com)
+ * 
+ * for more info visit http://cssglobe.com/post/1695/easiest-tooltip-and-image-preview-using-jquery
+ *
+ */
+ 
+this.screenshotPreview = function(){	
+	/* CONFIG */
+
+		xOffset = 10;
+		yOffset = 30;
+
+		// these 2 variable determine popup's distance from the cursor
+		// you might want to adjust to get the right result
+
+	/* END CONFIG */
+	$("a.screenshot").hover(function(e){
+		this.t = this.title;
+		this.title = "";	
+		var c = (this.t != "") ? "<br/>" + this.t : "";
+		$("body").append("<p id='screenshot'><img src='"+ this.rel +"' alt='url preview' />"+ c +"</p>");								 
+		$("#screenshot")
+			.css("top",(e.pageY - xOffset) + "px")
+			.css("left",(e.pageX + yOffset) + "px")
+			.fadeIn("fast");						
+    },
+	function(){
+		this.title = this.t;	
+		$("#screenshot").remove();
+    });	
+	$("a.screenshot").mousemove(function(e){
+		$("#screenshot")
+			.css("top",(e.pageY - xOffset) + "px")
+			.css("left",(e.pageX + yOffset) + "px");
+	});			
+};
+
+
+// starting the script on page load
+$(document).ready(function(){
+	screenshotPreview();
+});
+  
+  </script>
+  
+  
+<script>
+  $(function() {
+  $( document ).tooltip();
+  });
+</script> 
+
+<div id="playlist" style="color: #fff;">
+  <h1 class="ui-widget-header" style="color: #fff; font-size: 22px;">Lessons</h1>
+  <div id="playlistItems">
+    <h2><a href="#" style="color: #fff;">Unit 1</a></h2>
+    <div>
+      <ul> 
+	<li><label for="plist0" title="description">1.1 Lesson Name</label> <input name="plist0" type="hidden" value="1.1"></li>
+	<li><label for="plist1" title="description">1.2 Lesson Name</label> <input name="plist1" type="hidden" value="1.2"></li>
+	<li><label for="plist2" title="description">1.3 Lesson Name</label> <input name="plist2" type="hidden" value="1.3"></li>
+	<li><label for="plist3" title="description">1.4 Lesson Name</label> <input name="plist3" type="hidden" value="1.4"></li>
+	<li><label for="plist4" title="description">1.5 Lesson Name</label> <input name="plist4" type="hidden" value="1.5"></li>
+      </ul> 
+    </div>
+    <h2><a href="#" style="color: #fff;">Unit 2</a></h2>
+    <div>
+      <ul> 
+	<li><label for="plist0" title="description">2.1 Lesson Name</label> <input name="plist0" type="hidden" value="2.1"></li>
+	<li><label for="plist1" title="description">2.2 Lesson Name</label> <input name="plist1" type="hidden" value="2.2"></li>
+	<li><label for="plist2" title="description">2.3 Lesson Name</label> <input name="plist2" type="hidden" value="2.3"></li>
+	<li><label for="plist3" title="description">2.4 Lesson Name</label> <input name="plist3" type="hidden" value="2.4"></li>
+	<li><label for="plist4" title="description">2.5 Lesson Name</label> <input name="plist4" type="hidden" value="2.5"></li>
+      </ul> 
+    </div>
+    <h2><a href="#" style="color: #fff;">Unit 3</a></h2>
+    <div>
+      <ul> 
+	<li><label for="plist0" title="description">3.1 Lesson Name</label> <input name="plist0" type="hidden" value="3.1"></li>
+	<li><label for="plist1" title="description">3.2 Lesson Name</label> <input name="plist1" type="hidden" value="3.2"></li>
+	<li><label for="plist2" title="description">3.3 Lesson Name</label> <input name="plist2" type="hidden" value="3.3"></li>
+	<li><label for="plist3" title="description">3.4 Lesson Name</label> <input name="plist3" type="hidden" value="3.4"></li>
+	<li><label for="plist4" title="description">3.5 Lesson Name</label> <input name="plist4" type="hidden" value="3.5"></li>
+      </ul> 
+    </div>
+    <h2><a href="#" style="color: #fff;">Unit 4</a></h2>
+    <div>
+      <ul> 
+	<li><label for="plist0" title="description">4.1 Lesson Name</label> <input name="plist0" type="hidden" value="4.1"></li>
+	<li><label for="plist1" title="description">4.2 Lesson Name</label> <input name="plist1" type="hidden" value="4.2"></li>
+	<li><label for="plist2" title="description">4.3 Lesson Name</label> <input name="plist2" type="hidden" value="4.3"></li>
+	<li><label for="plist3" title="description">4.4 Lesson Name</label> <input name="plist3" type="hidden" value="4.4"></li>
+	<li><label for="plist4" title="description">4.5 Lesson Name</label> <input name="plist4" type="hidden" value="4.5"></li>
+      </ul> 
+    </div>
+    <h2><a href="#" style="color: #fff;">Unit 5</a></h2>
+    <div>
+      <ul> 
+	<li><label for="plist0" title="description">5.1 Lesson Name</label> <input name="plist0" type="hidden" value="5.1"></li>
+	<li><label for="plist1" title="description">5.2 Lesson Name</label> <input name="plist1" type="hidden" value="5.2"></li>
+	<li><label for="plist2" title="description">5.3 Lesson Name</label> <input name="plist2" type="hidden" value="5.3"></li>
+	<li><label for="plist3" title="description">5.4 Lesson Name</label> <input name="plist3" type="hidden" value="5.4"></li>
+	<li><label for="plist4" title="description">5.5 Lesson Name</label> <input name="plist4" type="hidden" value="5.5"></li>
+      </ul> 
+    </div>
+        
+  </div>
+</div>
+
+<div id="droppedItems">
+  <h1 class="ui-widget-header" style="color: #fff; font-size: 22px;">Playlist</h1>
+  <div class="ui-widget-content">
+    <form method="post">
+      <ol>	
+      </ol>
+  </div>
+   <input type="submit" value="Save">
+    <form><input type=button value="Clear" onClick="window.location.reload()"></form>
+</div>
+
+<div id="current_playlist" style="float:right;">
+  <ul>
+    {% for item in playlist %}
+    <li>{{item}}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+
+<div style="padding: 330px;">
+</div>
+
+
+{% endblock main_content%}

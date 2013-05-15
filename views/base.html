@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- base.html -->
+<html class="google" lang="{{course_info.course.locale}}">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	
+	<script type="text/javascript" src="assets/lib/main.js"></script>
+    <base href="{{ gcb_course_base }}" />
+    <script>
+      (function(H) {
+        H.className = H.className.replace(/\bgoogle\b/,'google-js');
+      })(document.documentElement)
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>
+      {{course_info.course.title}} -
+      {% block subtitle %}
+        {% trans %} Course {% endtrans %}
+      {% endblock subtitle %}
+    </title>
+
+
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+	
+	
+    <link rel="icon" href="assets/img/favicon.ico" />
+
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin" rel="stylesheet">
+
+    <!-- jQuery should be imported first -->
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+    <!-- The following translated strings are used in activity-generic.js and should be
+    declared before that file is imported. -->
+    <script>
+      // import JSON for older browsers like IE 7
+      if (typeof JSON == 'undefined') {
+        document.write(
+            '<script src="assets/lib/json2-2012.10.08.min.js"></' + 'script>');
+      }
+
+      // inline translations
+      var trans = {};
+      trans.CHECK_ANSWER_TEXT = '{% trans %} Check Answer {% endtrans %}';
+      trans.CHECK_ANSWERS_TEXT = '{% trans %} Check Answers {% endtrans %}';
+      trans.SHOW_ANSWER_TEXT = '{% trans %} Skip and Show Answer {% endtrans %}';
+      trans.SAVE_ANSWERS_TEXT = '{% trans %} Save Answers {% endtrans %}';
+      trans.SELECT_ANSWER_PROMPT = '{% trans %} Please click one of the buttons for your answer. {% endtrans %}';
+      trans.ALL_CORRECT_TEXT = '{% trans %} All your answers are correct! {% endtrans %}';
+      trans.NUM_CORRECT_TEXT = '{% trans %} Number of questions you answered correctly {% endtrans %}';
+      trans.YOUR_SCORE_TEXT = '{% trans %} You received a score on this assessment of {% endtrans %}';
+      trans.LESSONS_TO_REVIEW_TEXT = '{% trans %} Here are lessons you could review to improve your score {% endtrans %}';
+      trans.PERFECT_SCORE_SAVE_TEXT =
+          '{% trans %} Congratulations! Press the \'Save Answers\' button to submit your grade. {% endtrans %}';
+      trans.GENERIC_SAVE_TEXT =
+          '{% trans %} Press the \'Save Answers\' button below to save your scores. You can also edit your answers above before clicking \'Save Answers\'. {% endtrans %}';
+    </script>
+    <script src="assets/lib/activity-generic-1.2.js"></script>
+
+    {% if course_info.base.show_gplus_button %}
+      <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    {% endif %}
+
+    {{course_info.base.before_head_tag_ends}}
+  </head>
+
+  <body>
+  
+
+    {{course_info.base.after_body_tag_begins}}
+    
+	
+	
+	
+	
+
+    {% block navbar %}
+
+	
+	<div id="wrap">
+
+		<div id="header">
+
+			<div id="dropwrapcenter">
+	
+<ul id="menu">
+    <li><a href="#"><img src="http://mypage.iu.edu/~hplagema/mooc/images/logo_header.png"></a></li>
+	<li><a href="#" class="drop" style="height: 50px"><img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/homehover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/home.png'" src="http://mypage.iu.edu/~hplagema/mooc/images/home.png"></a></li>
+    <li><a href="unit?unit=1" class="drop"><img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/lessonshover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/lessons.png'"  src="http://mypage.iu.edu/~hplagema/mooc/images/lessons.png"></a>
+	
+    
+        <div class="dropdown_4columns">
+    
+            <div class="col_1">
+            
+                <h3>Starting VMs</h3>
+                <ul>
+                    <li><a href="unit?unit=2&lesson=1">VMware</a></li>
+                    <li><a href="unit?unit=2&lesson=2">Amazon EC2</a></li>
+                    <li><a href="unit?unit=2&lesson=3">Microsoft Azure</a></li>
+                    <li><a href="unit?unit=2&lesson=4">Eucalyptus</a></li>
+                    <li><a href="unit?unit=2&lesson=5">Nimbus</a></li>
+					<li><a href="unit?unit=2&lesson=6">Open Stack</a></li>
+					<li><a href="unit?unit=2&lesson=7">Open Nebula</a></li>
+                </ul>   
+                 
+            </div>
+    
+            <div class="col_1">
+            
+                <h3>Storing Data</h3>
+                <ul>
+                    <li><a href="unit?unit=3&lesson=1">Google BigTable</a></li>
+                    <li><a href="unit?unit=3&lesson=2">Hadoop HBase</a></li>
+                    <li><a href="unit?unit=3&lesson=3">Hadoop Hive</a></li>
+                </ul>   
+                 
+            </div>
+    
+            <div class="col_1">
+            
+                <h3>Accessing Data</h3>
+                <ul>
+                    <li><a href="unit?unit=4&lesson=1">Google Sawzall</a></li>
+                    <li><a href="unit?unit=4&lesson=2">Hadoop Pig</a></li>
+                </ul>   
+                 
+            </div>
+			
+			<div class="col_1">
+            
+                <h3>Running Programs</h3>
+                <ul>
+                    <li><a href="unit?unit=5&lesson=1">Hadoop on Multicore</a></li>
+                    <li><a href="unit?unit=5&lesson=2">Hadoop on GPU</a></li>
+					<li><a href="unit?unit=5&lesson=3">DryadLINQ/Dryad</a></li>
+                    <li><a href="unit?unit=5&lesson=4">Twister Iterative MapReduce</a></li>
+					<li><a href="unit?unit=5&lesson=5">Pregel</a></li>
+                    <li><a href="unit?unit=5&lesson=6">Spark</a></li>
+                </ul>   
+                 
+            </div>
+			
+			<div class="col_1">
+            
+                <h3>Solving Problems</h3>
+                <ul>
+                    <li><a href="unit?unit=6&lesson=1">Blast</a></li>
+                    <li><a href="unit?unit=6&lesson=2">Kmeans</a></li>
+					<li><a href="unit?unit=6&lesson=3">Page Rank</a></li>
+                </ul>   
+				
+                 
+            </div>
+            
+        </div>
+		</li>
+    
+    
+	<li><a href="homework" class="drop"><img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/homeworkhover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/homework.png'"  src="http://mypage.iu.edu/~hplagema/mooc/images/homework.png"></a></li>
+	<li><a href="forum" class="drop"><img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/forumhover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/forum.png'" src="http://mypage.iu.edu/~hplagema/mooc/images/forum.png"></a></li>
+	
+
+	<li class="menu_right"><a href="playlist" class="drop"><img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/customizehover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/customize.png'"  src="http://mypage.iu.edu/~hplagema/mooc/images/customize.png"></a>
+    
+		<div class="dropdown_1column align_right">
+        
+                <div class="col_1">
+                
+                    <ul class="simple">
+		      {% for item in playlist %}
+		      <li><a href = "{{playlist_urls[loop.index0]}}"> {{item}} </a></li>
+		      {% endfor %}
+                    </ul>   
+                    
+                </div>
+                
+		</div>
+	
+	<li><a href="student/home" class="drop"><img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/myprofilehover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/myprofile.png'" src="http://mypage.iu.edu/~hplagema/mooc/images/myprofile.png"></a></li>
+
+    
+        <div class="dropdown_3columns align_right"><!-- Begin 3 columns container -->
+            
+            <div class="col_3">
+                <h2>Lists in Boxes</h2>
+            </div>
+            
+            <div class="col_1">
+    
+                <ul class="greybox">
+                    <li><a href="#">FreelanceSwitch</a></li>
+                    <li><a href="#">Creattica</a></li>
+                    <li><a href="#">WorkAwesome</a></li>
+                    <li><a href="#">Mac Apps</a></li>
+                    <li><a href="#">Web Apps</a></li>
+                </ul>   
+    
+            </div>
+            
+            <div class="col_1">
+    
+                <ul class="greybox">
+                    <li><a href="#">ThemeForest</a></li>
+                    <li><a href="#">GraphicRiver</a></li>
+                    <li><a href="#">ActiveDen</a></li>
+                    <li><a href="#">VideoHive</a></li>
+                    <li><a href="#">3DOcean</a></li>
+                </ul>   
+    
+            </div>
+            
+            <div class="col_1">
+    
+                <ul class="greybox">
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Logo</a></li>
+                    <li><a href="#">Flash</a></li>
+                    <li><a href="#">Illustration</a></li>
+                    <li><a href="#">More...</a></li>
+                </ul>   
+    
+            </div>
+            
+            <div class="col_3">
+                <h2>Here are some image examples</h2>
+            </div>
+            
+            <div class="col_3">
+                <img src="img/02.jpg" width="70" height="70" class="img_left imgshadow" alt="" />
+                <p>Maecenas eget eros lorem, nec pellentesque lacus. Aenean dui orci, rhoncus sit amet tristique eu, tristique sed odio. Praesent ut interdum elit. Maecenas imperdiet, nibh vitae rutrum vulputate, lorem sem condimentum.<a href="#">Read more...</a></p>
+    
+                <img src="img/01.jpg" width="70" height="70" class="img_left imgshadow" alt="" />
+                <p>Aliquam elementum felis quis felis consequat scelerisque. Fusce sed lectus at arcu mollis accumsan at nec nisi. Aliquam pretium mollis fringilla. Vestibulum tempor facilisis malesuada. <a href="#">Read more...</a></p>
+            </div>
+        
+        </div>
+        
+    </li>
+	
+	
+	{{course_info.base.before_navbar_ends}}
+				  {% if is_super_admin %}
+				  <li class="pull-right">
+					<a href="/admin">Admin</a>
+				  </li>
+				  {% endif %}
+				  {% if is_course_admin %}
+				  <li class="pull-right">
+					<a href="dashboard">Dashboard</a>
+				  </li>
+				  {% endif %}
+				  <li>
+					
+						{% if logoutUrl %}
+								<div id="user_email">
+								{{ email }}
+								</div>
+								
+									<a href="{{ logoutUrl }}" style="text-decoration: none;">
+										{% trans %}  {% endtrans %}
+									</a>
+							
+								{% elif loginUrl %}
+								
+									<a href="{{ loginUrl }}">{% trans %} <img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/loginhover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/login.png'" src="http://mypage.iu.edu/~hplagema/mooc/images/login.png"> {% endtrans %}</a>
+								
+								{% endif %}
+					</li>
+					<li><a href="{{ logoutUrl }}"><img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/logouthover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/logout.png'" src="http://mypage.iu.edu/~hplagema/mooc/images/logout.png"></a></li>
+	
+
+
+</ul>
+</div>
+</div>
+</div>
+    {% endblock %}
+
+	
+	
+	
+    <!-- top section -->
+    <div class="is-wrapper">
+      <div class="gcb-aux">
+	  
+	  
+	  <!--
+	  THIS PART MAY BE DELETABLE
+	  THIS PART MAY BE DELETABLE
+	  THIS PART MAY BE DELETABLE
+	  THIS PART MAY BE DELETABLE
+	  THIS PART MAY BE DELETABLE
+	  THIS PART MAY BE DELETABLE
+	  -->
+        {% block top_content %}
+		
+		
+		{% endblock %}
+		
+        {{course_info.base.after_top_content_ends}}
+
+        <!-- main section -->
+		
+        {% block main_content %}
+		
+		{% endblock %}
+		
+        {{course_info.base.after_main_content_ends}}
+      </div>
+    </div>
+	</div>
+
+    <!-- footer section -->
+	
+    <div style="" id="gcb-signature"></div>
+    <div class="gcb-footer" id="gcb-footer">
+      <div id="gcb-footer-local">
+        <div class="gcb-aux">
+        </div>
+      </div>
+      <div id="gcb-footer-global">
+        <div class="gcb-aux">
+		<div class="table_footer" style="border: none; margin-top: 0px;">
+		
+		
+			<table style="color: black; text-align: center; margin-left: 0px;">
+				<tr>
+					<td style="border:none; font-size: 17px;"><a style="color: black;" href="people"> People </a></td>
+					<td style="border:none; font-size: 17px;">Support</td>
+					<td style="border:none; font-size: 17px;">Our Mission</td>
+					<td style="border:none; font-size: 17px;">Google MOOCs</td>
+					<td style="border:none; font-size: 17px;">Tutorials</td>
+				</tr>
+				<tr>
+					<td style="border:none;"><a style="color: black;" href="http://www.soic.indiana.edu/people/profiles/qiu-judy.shtml"> Professor Qiu </a></td>
+					<td style="border:none;">FAQ</td>
+					<td style="border:none;">Articles</td>
+					<td style="border:none;">Guidelines</td>
+					<td style="border:none;">Walkthroughs</td>
+				</tr>
+				<tr>
+					<td style="border:none;"><a style="color: black;" href="people"> Developers </a></td>
+					<td style="border:none;"><a style="color: black;" href="forum"> Forum </a> </td>
+					<td style="border:none;">Talks</td>
+					<td style="border:none;">Project</td>
+					<td style="border:none;">Coding</td>
+				</tr>
+				<tr>
+					<td style="border:none;"><a style="color: black;" href="https://code.google.com/p/course-builder/"> Collaborators </a></td>
+					<td style="border:none;">Contact</td>
+					<td style="border:none;">Articles</td>
+					<td style="border:none;"></td>
+					<td style="border:none;"></td>
+				</tr>
+			</table>
+		</div>
+          <div style="text-align: center; margin: 0 auto; padding-top: 30px;">
+              | <a href="{{course_info.institution.url}}">{{course_info.institution.name}}</a> | <a href="{{course_info.base.privacy_terms_url}}">
+                {% trans %} Privacy &amp; Terms {% endtrans %}</a> |
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    {{course_info.base.before_body_tag_ends}}
+ </body>
+</html>
+</html>

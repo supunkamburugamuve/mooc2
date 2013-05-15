@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html class="google" lang="en">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- FIXME: the title below should be changed to your course name. -->
+    <title>Power Searching with Google</title>
+
+	
+	
+	
+	<link rel="stylesheet" href="nivo-slider.css" media="screen">
+	<link rel="stylesheet" href="slider2.css" media="screen">
+
+    <!-- jQuery should be imported first -->
+
+	
+
+	
+ 
+
+    <!--
+        [FIXME: If you want to include any analytics code that covers all your
+        course webpages, do so here (between the comment tags). See
+        https://code.google.com/p/course-builder/wiki/ReachAndEngagementMetrics.]
+    -->
+
+
+  </head>
+  <body>
+  
+
+		
+<!-- THIS IS THE JQUERY AND NIVO SLIDER -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="jquery.nivo.slider.pack.js"></script>
+ 
+<script>
+    $(window).load(function() {
+        $('#slider').nivoSlider({
+            directionNavHide: false,
+            captionOpacity: 1,
+            prevText: '<',
+            nextText: '>'
+        });
+    });
+</script>
+
+<div class="slider-wrapper futurico-theme">
+ 
+    <div id="slider" class="nivoSlider">
+ 
+        <img src="img/slide1.jpg" alt="">
+ 
+        <img src="img/slide2.jpg" alt="">
+ 
+        <img src="img/slide3.jpg" alt="">
+ 
+        <img src="img/slide4.jpg" alt="">
+ 
+    </div>
+ 
+</div>
+
+<div id="slider" class="nivoSlider">
+ 
+    <img src="img/slide1.jpg" alt="" title="#caption1">
+ 
+    <img src="img/slide2.jpg" alt="">
+ 
+    <img src="img/slide3.jpg" alt="" title="#caption3">
+ 
+    <img src="img/slide4.jpg" alt="">
+ 
+</div>
+ 
+<div id="caption1" class="nivo-html-caption">
+    <strong>New Project</strong> <span></span> <em>Some description here</em>.
+</div>
+ 
+<div id="caption3" class="nivo-html-caption">
+    <strong>Image 3</strong> <span></span> <em>Some description here</em>.
+</div>
+
+		
+
+
+ 
+ </body>
+</html>

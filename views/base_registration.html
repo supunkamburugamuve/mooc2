@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+    {% block navbar %}
+
+	
+	<div id="wrap">
+
+		<div id="header">
+
+			<div id="dropwrapcenter">
+	
+<ul id="menu">
+    <li><a href="#"><img src="http://mypage.iu.edu/~hplagema/mooc/images/logo_header.png"></a></li>
+
+				  <li>
+					
+						{% if logoutUrl %}
+
+								{{ email }}
+								&nbsp;|&nbsp;
+								
+									<a href="{{ logoutUrl }}" style="text-decoration: none;">
+										{% trans %}  {% endtrans %}
+									</a>
+							
+								{% elif loginUrl %}
+								
+									<a href="{{ loginUrl }}">{% trans %} <img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/loginhover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/login.png'" src="http://mypage.iu.edu/~hplagema/mooc/images/login.png"> {% endtrans %}</a>
+								
+								{% endif %}
+					</li>
+					<li><a href="register"><img onmouseover="this.src='http://mypage.iu.edu/~hplagema/mooc/images/registerhover.png'" onmouseout="this.src='http://mypage.iu.edu/~hplagema/mooc/images/register.png'" src="http://mypage.iu.edu/~hplagema/mooc/images/register.png"></a></li>
+	
+
+
+</ul>
+</div>
+</div>
+</div>
+    {% endblock %}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<div class="gcb-main">
+			<!-- Begin - learn more section (image + article abstracts)-->
+
+	<div id="oscillating_articles">
+		<!-- Begin - learn more section (image + article abstracts)-->
+		<div class="cloud_computing">
+			<img src="http://mypage.iu.edu/~hplagema/mooc/images/cloud_computing.jpg" style="float: left;"/>
+			<p style="font-weight: bold;"> <h1 style="font-size: 120%;">What is Cloud Computing?</h1> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cloud computing is a general term for anything that involves delivering hosted 
+			services over the Internet. These services are broadly divided into three categories: Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS) and 
+			Software-as-a-Service (SaaS).  A cloud service has three distinct characteristics that differentiate it from traditional hosting. It is sold on demand, typically 
+			by the minute or the hour; it is elastic -- a user can have as much or as little of a service as they want at any given time; and the service is fully managed by 
+			the provider (the consumer needs nothing but a personal computer and Internet access)..... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#"/>Learn More</a></p>
+		</div>
+		
+		<div class="cloud_benefits" style="width: 857px; 80px; padding-top: 20px; padding-bottom: 20px;">
+			<img src="http://mypage.iu.edu/~hplagema/mooc/images/cloud_computing.jpg" style="float: right; padding-right: 17px;"/>
+			<p style="font-weight: bold;"> <h1 style="font-size: 120%;">How You Can Benefit</h1> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cloud computing is a general term for anything that involves delivering hosted 
+			services over the Internet. These services are broadly divided into three categories: Infrastructure-as-a-Service (IaaS), Platform-as-a-Service (PaaS) and 
+			Software-as-a-Service (SaaS).  A cloud service has three distinct characteristics that differentiate it from traditional hosting. It is sold on demand, typically 
+			by the minute or the hour; it is elastic -- a user can have as much or as little of a service as they want at any given time; and the service is fully managed by 
+			the provider (the consumer needs nothing but a personal computer and Internet access)..... &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#"/>Learn More</a></p>
+		</div>
+		
+		<div class="job_outlook">
+			<img src="http://mypage.iu.edu/~hplagema/mooc/images/job_outlook.jpg" style="float: left; padding-right: 17px; padding-bottom: 100px;"/>
+			<p style="font-weight: bold;"> <h1 style="font-size: 120%;">Job Outlook</h1> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Cloud computing is one of today's hottest 
+			IT trends, because it's all about saving money and simplifying the lives of users. In cloud computing, large pools of computer systems share an IT infrastructure, enabling 
+			products, services and solutions to be accessed and consumed in real-time over the Internet, typically via a subscription model. Cloud computing made it onto Gartner's Hype Cycle 
+			Special Report for 2009. The research firm has pointed out that companies are still very interested in learning more about how to consume IT services in the most cost-effective 
+			way. One of the solutions...
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="#"/>Learn More</a></p>
+		</div>
+	</div>
+	</div>
